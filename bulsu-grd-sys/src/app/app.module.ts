@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule} from '@angular/fire/compat';
+
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { InputTextComponent } from './components/input-text/input-text.component
 import { LandingComponent } from './pages/landing/landing.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SelectorComponent } from './components/selector/selector.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { SelectorComponent } from './components/selector/selector.component';
     
   ],
   imports: [
+  AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutingModule,
     SweetAlert2Module.forRoot()
